@@ -5,7 +5,17 @@
 */
 
 const addition = (...numbers) => {
-  // all your code
+	if (numbers.length === 0 || numbers.some(isNaN) || numbers.length === -1) {
+		throw new Error("Invalid Input");
+	} else {
+		return numbers.reduce((a, b) => {
+			return a + b;
+		});
+	}
 };
+
+// addition(10, 20, 30, 40, 50);
+// addition("venu", 26, 455);
+// addition();
 
 module.exports = addition;
